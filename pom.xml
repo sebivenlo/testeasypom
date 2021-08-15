@@ -32,7 +32,7 @@
     </licenses>
     <groupId>io.github.sebivenlo</groupId>
     <artifactId>testeasypom</artifactId>
-    <version>4.0.0</version>
+    <version>4.0.1</version>
     <packaging>pom</packaging>
     <name>SEBIVenlo :: TestEasyPom</name>
     <url>https://sebivenlo.github.io/testeasypom/</url>
@@ -995,7 +995,7 @@
                                 <resourceArtifact>
                                     <groupId>io.github.sebivenlo</groupId>
                                     <artifactId>javadochighlighter</artifactId>
-                                    <version>1.0</version>
+                                    <version>1.0.1</version>
                                 </resourceArtifact>
                             </resourcesArtifacts>
                             <!-- Add SyntaxHighlighter feature.
