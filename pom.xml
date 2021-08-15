@@ -35,7 +35,7 @@
     <version>1.0.0</version>
     <packaging>pom</packaging>
     <name>SEBIVenlo :: TestEasyPom</name>
-    <!--<url>https://</url>-->
+    <url>https://sebivenlo.github.io/testeasypom/</url>
     <distributionManagement>
         <snapshotRepository>
             <id>ossrh</id>
