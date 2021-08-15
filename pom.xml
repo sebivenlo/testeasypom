@@ -24,12 +24,18 @@
             </roles>
         </developer>
     </developers>
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
     <groupId>io.github.sebivenlo</groupId>
     <artifactId>testeasypom</artifactId>
     <version>1.0.0</version>
     <packaging>pom</packaging>
     <name>SEBIVenlo :: TestEasyPom</name>
-    <url>https://www.fontysvenlo.org/repository</url>
+    <!--<url>https://</url>-->
     <distributionManagement>
         <snapshotRepository>
             <id>ossrh</id>
@@ -40,6 +46,11 @@
             <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
+    <scm>
+        <connection>scm:git:git://github.com/sebivenlo/testeasypom.git</connection>
+        <developerConnection>scm:git:ssh://github.com:sebivenlo/testeasypom.git</developerConnection>
+        <url>https://github.com/sebivenlo/testeasypom/tree/main</url>
+    </scm>
     
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
