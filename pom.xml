@@ -32,7 +32,7 @@
     </licenses>
     <groupId>io.github.sebivenlo</groupId>
     <artifactId>testeasypom</artifactId>
-    <version>4.0.1</version>
+    <version>4.0.2</version>
     <packaging>pom</packaging>
     <name>SEBIVenlo :: TestEasyPom</name>
     <url>https://sebivenlo.github.io/testeasypom/</url>
@@ -250,20 +250,6 @@
                         <id>attach-javadocs</id>
                         <goals>
                             <goal>jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-gpg-plugin</artifactId>
-                <version>3.0.1</version>
-                <executions>
-                    <execution>
-                        <id>sign-artifacts</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>sign</goal>
                         </goals>
                     </execution>
                 </executions>
