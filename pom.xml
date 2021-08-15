@@ -993,7 +993,7 @@
                             <!--<show>private</show>-->
                             <resourcesArtifacts>
                                 <resourceArtifact>
-                                    <groupId>nl.fontys.sebivenlo</groupId>
+                                    <groupId>io.github.sebivenlo</groupId>
                                     <artifactId>javadochighlighter</artifactId>
                                     <version>1.0</version>
                                 </resourceArtifact>
