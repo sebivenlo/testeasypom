@@ -1,25 +1,24 @@
-== sebipom
-
-Maven parent project file for use with sebi venlo projects. Split off from statewalker.
+== testeasypom
 
 *Mavenitis* is not avoidable, but *Configuritis* is.
+
 If you did not know: If you use maven, maven will be quite diligent and ensure that all your
 dependencies are up to date. This may and will lead to the behavior of downloading the whole maven universe to
 your machine, or at least the pieces (dependencies) that are in use by your project, directly or indirectly or transitively.
 
 Once you get past the first symptoms of mavinitis, by simple accepting the diligence that maven exhibits, because it takes
 it task as serious as it does, you can avoid Configuritis by NOT configure every plugin in each and every project, but use something
-similiar to sebipom as parent pom in your project. Since a parent pom can have a parent,
+similiar to testeasypom as parent pom in your project. Since a parent pom can have a parent,
 this does not limit you when you want or need to define a multi-module project with a parent pom defining the modules.
 
-You can use the configuration by defining sebipom as the parent by simply adding
+You can use the configuration by defining testeasypom as the parent by simply adding
 
-.Adding sebipom as parent to a project: add this near the top.
+.Adding testeasypom as parent to a project: add this near the top.
 [source,xml]
 ----
   <parent>
-      <groupId>nl.fontys.sebivenlo</groupId>
-      <artifactId>sebipom</artifactId>
+      <groupId>io.github.sebivenlo</groupId>
+      <artifactId>testeasypom</artifactId>
       <version>3.0.4</version>
       <relativePath/>
   </parent>
@@ -28,9 +27,10 @@ You can use the configuration by defining sebipom as the parent by simply adding
 to your project's pom.
 
 
-Sebi pom has some goodies that make it easy to use features with maven+java without falling into an install fest.
-Feature:
+**testeasypom** has some goodies that make it easy to use features with maven+java without falling into an install fest.
+Features:
 
+* setup test dependencies for the latest stable junit 5 and assertj
 * Nicely formatted code in javadoc by a highlighter plugin with configuration
 * Java Coverage with JaCoCo
 * PIT testing plugin
@@ -40,7 +40,7 @@ Feature:
 
 From now on sebipon will have a repo on its own.
 
-In the table below you find all the properties sebipom defines.
+In the table below you find all the properties testeasypom defines.
 All properties have to  be written in the maven format: `<property-name>value</property-name>`,
 where `property-name` is the name, and the `value` is the value.
 
@@ -64,12 +64,15 @@ where `property-name` is the name, and the `value` is the value.
 |javafx-maven-plugin-version|0.0.6|
 |====
 
+
+testeasypom has been derived from sebipom, with the same purpose for fontys venlo **S**oftware **E**ngineering and **B**usiness **I**nformatics students.
+
 === For TDD fans.
 
 **TL;DR:** Don't do `mvn package` or build (in your IDE) , do `mvn test` instead.
 
 For those that are into test driven something:
-Make it a habit to do `mvn test` instead of `mvn package`. `mvn package` typically does much more work than really required to get your tests do thier work. Enjoy the better maven experience this way. With sebipom , just typing *mvn*  defaults to mevn test.
+Make it a habit to do `mvn test` instead of `mvn package`. `mvn package` typically does much more work than really required to get your tests do thier work. Enjoy the better maven experience this way. With testeasypom , just typing *mvn*  defaults to mevn test.
 
 === Run an JavaFX application with this parent pom
 
@@ -80,7 +83,7 @@ You do that by invoking e.g.  `mvn -P fx package`. If your application is called
 
 === Run java 9 modular (JPMS) projects and test with little hassle.
 
-Sebipom provides a simple mechanism to **open** or **exports** the packages of your modular project.
+testeasypom provides a simple mechanism to **open** or **exports** the packages of your modular project.
 Add the property `<surefire.opens>` to your properties inside the pom.xml file of your project.
 
 .setting the opens statements for javafx project, so that junit and the fx test framework can reflect on 'business' and test classes
@@ -97,5 +100,5 @@ Add the property `<surefire.opens>` to your properties inside the pom.xml file o
 
 In the example you see opening and exporting parts of javafx for the purpose of the tests. In normal use, the modules will still stay closed, as designed.
 
-With sebipom, the only configuration left to you is adding the actual dependencies of your project and maybe test libraries
+With testeasypom, the only configuration left to you is adding the actual dependencies of your project and maybe test libraries
 for JavaFX, such as testfx.
