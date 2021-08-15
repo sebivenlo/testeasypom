@@ -65,20 +65,6 @@
         <javadoc-highlight>true</javadoc-highlight>
     </properties>
 
-    <pluginRepositories>
-        <pluginRepository>
-            <id>oss.sonatype.org</id>
-            <name>umlgraph fix</name>
-            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-        </pluginRepository>
-
-    </pluginRepositories>
-    <repositories>
-        <repository>
-            <id>fontysvenlo.org</id>
-            <url>https://www.fontysvenlo.org/repository</url>
-        </repository>
-    </repositories>
     <build>
         <defaultGoal>clean test</defaultGoal>
         <resources>
