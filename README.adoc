@@ -125,3 +125,5 @@ Then go to https://s01.oss.sonatype.org/index.html#stagingRepositories[stagingRe
 
 In there, 'close' the staging upload, which will check all requirements, such completeness of the upload, signed with pgp etc.
 When all tests passed, click the release button on the almost top menu.
+
+once published the atrifact will appear on the central repo under https://repo.maven.apache.org/maven2/io/github/sebivenlo/[sebivenlo part of central].
