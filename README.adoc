@@ -102,3 +102,26 @@ In the example you see opening and exporting parts of javafx for the purpose of 
 
 With testeasypom, the only configuration left to you is adding the actual dependencies of your project and maybe test libraries
 for JavaFX, such as testfx.
+
+== For maintainers of public maven modules
+
+If you want to deploy an artifact using this pom as parent to maven-central, you need to do the following.
+
+* Add a license if you do not want the default apache license.
+* Add a description to the dependent pom.xml
+* Add the developer info to the dependent pom.xml.
+* Add the url of the project.
+* Make sure you have a working gpg config and as described in https://central.sonatype.org/publish/publish-maven/[sonatyp publish maven artifact].
+
+Then deploy using the ossrh-release profile as in
+
+[source,sh]
+----
+mvn -P ossrh-release deploy
+----
+
+This will sign and upload you artifact.
+Then go to https://s01.oss.sonatype.org/index.html#stagingRepositories[stagingRepositories] (login required, get a login at https://issues.sonatype.org/[sonatype jira]).
+
+In there, 'close' the staging upload, which will check all requirements, such completeness of the upload, signed with pgp etc.
+When all tests passed, click the release button on the almost top menu.
