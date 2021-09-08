@@ -124,6 +124,6 @@ This will sign and upload you artifact.
 Then go to https://s01.oss.sonatype.org/index.html#stagingRepositories[stagingRepositories] (login required, get a login at https://issues.sonatype.org/[sonatype jira]).
 
 In there, 'close' the staging upload, which will check all requirements, such completeness of the upload, signed with pgp etc.
-When all tests passed, click the release button on the almost top menu.
+When all tests passed, click the 'release' button on the almost top menu.
 
-once published the atrifact will appear on the central repo under https://repo.maven.apache.org/maven2/io/github/sebivenlo/[sebivenlo part of central].
+Once published, the artifact will appear on the central repo under https://repo.maven.apache.org/maven2/io/github/sebivenlo/[sebivenlo part of central].

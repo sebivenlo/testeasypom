@@ -32,7 +32,7 @@
     </licenses>
     <groupId>io.github.sebivenlo</groupId>
     <artifactId>testeasypom</artifactId>
-    <version>4.0.2</version>
+    <version>4.0.3</version>
     <packaging>pom</packaging>
     <name>SEBIVenlo :: TestEasyPom</name>
     <url>https://sebivenlo.github.io/testeasypom/</url>
@@ -948,7 +948,7 @@
                             <executable>java</executable>
                             <arguments>
                                 <argument>--enable-preview</argument>
-                                <argument>exec.mainClass</argument>
+                                <argument>${exec.mainClass}</argument>
                             </arguments>
                         </configuration>
                     </plugin>
