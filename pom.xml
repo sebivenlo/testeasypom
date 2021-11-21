@@ -32,7 +32,7 @@
     </licenses>
     <groupId>io.github.sebivenlo</groupId>
     <artifactId>testeasypom</artifactId>
-    <version>4.0.3</version>
+    <version>4.0.4</version>
     <packaging>pom</packaging>
     <name>SEBIVenlo :: TestEasyPom</name>
     <url>https://sebivenlo.github.io/testeasypom/</url>
@@ -55,7 +55,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.lib.dir>/usr/share/java</java.lib.dir>
-        <java.release>16</java.release>
+        <java.release>17</java.release>
         <mockito.core.version>3.5.13</mockito.core.version>
         <junit.jupiter.version>5.7.2</junit.jupiter.version>
         <assertj.core.version>3.19.0</assertj.core.version>
@@ -72,7 +72,7 @@
         <checkstyle.config.location>${user.home}/.m2/sebivenlo_checks.xml</checkstyle.config.location>
         <javadoc.location>/usr/share/doc/openjdk-11-doc/docs/api/</javadoc.location>
         <pmdVersion>6.35.0</pmdVersion>
-        <javafx-maven-plugin-version>0.0.6</javafx-maven-plugin-version>
+        <javafx-maven-plugin-version>0.0.8</javafx-maven-plugin-version>
         <javadoc-highlight>true</javadoc-highlight>
     </properties>
 
