@@ -32,7 +32,7 @@
     </licenses>
     <groupId>io.github.sebivenlo</groupId>
     <artifactId>testeasypom</artifactId>
-    <version>4.0.5</version>
+    <version>4.0.6</version>
     <packaging>pom</packaging>
     <name>SEBIVenlo :: TestEasyPom</name>
     <url>https://sebivenlo.github.io/testeasypom/</url>
@@ -989,7 +989,7 @@
                         <configuration>
                             <additionalParam>-Xdoclint:none</additionalParam>
                             <additionalParam>-html5</additionalParam>
-                            <additionalOptions>--allow-script-in-comments</additionalOptions>
+                            <additionalJOptions>--allow-script-in-comments</additionalJOptions>
                             <release>${java.release}</release>
                             <source>${java.release}</source>
                             <detectJavaApiLink>false</detectJavaApiLink>
@@ -1010,13 +1010,13 @@
                             </header>
                             <!-- Activate and customize SyntaxHighlighter feature
                             This gets added to the bottom of every Javadoc html file -->
-                            <footer><![CDATA[
+                            <bottom><![CDATA[
                             <script type="text/javascript">
                                SyntaxHighlighter.defaults["auto-links"] = false;
                                SyntaxHighlighter.defaults["tab-size"] = 2;
                                SyntaxHighlighter.all();
                             </script>
-                       ]]></footer>
+                       ]]></bottom>
                         </configuration>
                     </plugin>
                 </plugins>
