@@ -8,7 +8,7 @@
         This is NOT cargo-cult, because NONE of the dependencies in this pom will end up in your final product.
 
         This is a continuation of sebipom.
-        Version 1.0.0 first version as testeasypom
+        Version 4.0.7: update dep and plugin versions.
     </description>
 
     <developers>
@@ -32,7 +32,7 @@
     </licenses>
     <groupId>io.github.sebivenlo</groupId>
     <artifactId>testeasypom</artifactId>
-    <version>4.0.6</version>
+    <version>4.0.7</version>
     <packaging>pom</packaging>
     <name>SEBIVenlo :: TestEasyPom</name>
     <url>https://sebivenlo.github.io/testeasypom/</url>
@@ -56,9 +56,9 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.lib.dir>/usr/share/java</java.lib.dir>
         <java.release>17</java.release>
-        <mockito.core.version>3.5.13</mockito.core.version>
-        <junit.jupiter.version>5.7.2</junit.jupiter.version>
-        <assertj.core.version>3.19.0</assertj.core.version>
+        <mockito.core.version>4.3.1</mockito.core.version>
+        <junit.jupiter.version>5.8.2</junit.jupiter.version>
+        <assertj.core.version>3.22.0</assertj.core.version>
         <jacoco.version>0.8.7</jacoco.version>
         <!-- empty argline is used by surefire and set by jacoco profile -->
         <jacocoArgLine></jacocoArgLine>
@@ -71,7 +71,7 @@
         <maven.compiler.release>${java.release}</maven.compiler.release>
         <checkstyle.config.location>${user.home}/.m2/sebivenlo_checks.xml</checkstyle.config.location>
         <javadoc.location>/usr/share/doc/openjdk-11-doc/docs/api/</javadoc.location>
-        <pmdVersion>6.35.0</pmdVersion>
+        <pmdVersion>6.42.0</pmdVersion>
         <javafx-maven-plugin-version>0.0.8</javafx-maven-plugin-version>
         <javadoc-highlight>true</javadoc-highlight>
     </properties>
@@ -98,17 +98,17 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-project-info-reports-plugin</artifactId>
-                    <version>3.1.2</version>
+                    <version>3.2.1</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
-                    <version>3.2.0</version>
+                    <version>3.2.2</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.8.1</version>
+                    <version>3.10.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -118,14 +118,13 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>3.3.1</version>
+                    <version>3.3.2</version>
                 </plugin>
-                    <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>exec-maven-plugin</artifactId>
-                        <version>3.0.0</version>
-                        <!--<version>3.0.0</version>-->
-                    </plugin>                
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>exec-maven-plugin</artifactId>
+                    <version>3.0.0</version>
+                </plugin>                
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
@@ -144,12 +143,12 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-site-plugin</artifactId>
-                    <version>3.9.1</version>
+                    <version>3.10.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-release-plugin</artifactId>
-                    <version>3.0.0-M1</version>
+                    <version>3.0.0-M5</version>
                 </plugin>
                 <plugin>
                     <groupId>org.openjfx</groupId>
@@ -159,12 +158,12 @@
                 <plugin>
                     <groupId>org.pitest</groupId>
                     <artifactId>pitest-maven</artifactId>
-                    <version>1.6.7</version>
+                    <version>1.7.4</version>
                     <dependencies>
                         <dependency>
                             <groupId>org.pitest</groupId>
                             <artifactId>pitest-junit5-plugin</artifactId>
-                            <version>0.14</version>
+                            <version>0.15</version>
                         </dependency>
                     </dependencies>
                 </plugin>
@@ -176,20 +175,20 @@
                         <dependency>
                             <groupId>com.puppycrawl.tools</groupId>
                             <artifactId>checkstyle</artifactId>
-                            <version>8.42</version>
+                            <version>9.3</version>
                         </dependency>
                     </dependencies>
                 </plugin>
                 <plugin>
                     <groupId>com.github.spotbugs</groupId>
                     <artifactId>spotbugs-maven-plugin</artifactId>
-                    <version>4.2.3</version>
+                    <version>4.5.3.0</version>
                     <dependencies>
                         <!-- overwrite dependency on spotbugs if you want to specify the version of spotbugs -->
                         <dependency>
                             <groupId>com.github.spotbugs</groupId>
                             <artifactId>spotbugs</artifactId>
-                            <version>4.2.3</version>
+                            <version>4.5.3</version>
                         </dependency>
                     </dependencies>
                 </plugin>
@@ -201,7 +200,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-pmd-plugin</artifactId>
-                    <version>3.14.0</version>
+                    <version>3.15.0</version>
                     <dependencies>
                         <dependency>
                             <groupId>net.sourceforge.pmd</groupId>
@@ -250,7 +249,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.3.0</version>
+                <version>3.3.2</version>
                 <executions>
                     <execution>
                         <id>attach-javadocs</id>
@@ -361,7 +360,7 @@
             <extension>
                 <groupId>org.apache.maven.wagon</groupId>
                 <artifactId>wagon-ssh-external</artifactId>
-                <version>3.4.3</version>
+                <version>3.5.1</version>
             </extension>
         </extensions>
 
@@ -406,7 +405,7 @@
             <dependency>
                 <groupId>org.apiguardian</groupId>
                 <artifactId>apiguardian-api</artifactId>
-                <version>1.1.1</version>
+                <version>1.1.2</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -449,6 +448,7 @@
     </reporting>
 
     <dependencies>
+
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
@@ -500,7 +500,7 @@
                 <dependency>
                     <groupId>junit</groupId>
                     <artifactId>junit</artifactId>
-                    <version>4.12</version>
+                    <version>4.13.2</version>
                 </dependency>
                 <dependency>
                     <groupId>org.junit.vintage</groupId>
@@ -643,7 +643,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>3.1.1</version>
+                        <version>3.3.2</version>
                         <configuration>
                             <detectJavaApiLink>false</detectJavaApiLink>
                             <show>private</show>
@@ -662,17 +662,17 @@
                                 <additionalDependency>
                                     <groupId>junit</groupId>
                                     <artifactId>junit</artifactId>
-                                    <version>4.12</version>
+                                    <version>4.13.2</version>
                                 </additionalDependency>
                                 <additionalDependency>
                                     <groupId>org.hamcrest</groupId>
                                     <artifactId>hamcrest-core</artifactId>
-                                    <version>1.3</version>
+                                    <version>2.2</version>
                                 </additionalDependency>
                                 <additionalDependency>
                                     <groupId>org.mockito</groupId>
                                     <artifactId>mockito-core</artifactId>
-                                    <version>2.24.0</version>
+                                    <version>${mockito.core.version}</version>
                                 </additionalDependency>
                                 <additionalDependency>
                                     <groupId>pl.pragmatists</groupId>
@@ -699,7 +699,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>3.1.1</version>
+                        <version>3.3.2</version>
                         <executions>
                             <execution>
                                 <id>attach-javadocs</id>
@@ -726,13 +726,13 @@
                                 <additionalDependency>
                                     <groupId>junit</groupId>
                                     <artifactId>junit</artifactId>
-                                    <version>4.12</version>
+                                    <version>4.13.2</version>
                                     <scope>test</scope>
                                 </additionalDependency>
                                 <additionalDependency>
                                     <groupId>org.assertj</groupId>
                                     <artifactId>assertj-core</artifactId>
-                                    <version>3.15.0</version>
+                                    <version>3.22.0</version>
                                     <scope>test</scope>
                                 </additionalDependency>
                                 <additionalDependency>
@@ -777,7 +777,7 @@
                     <plugin>
                         <!-- explicitly define maven-deploy-plugin after other to force exec order -->
                         <artifactId>maven-deploy-plugin</artifactId>
-                        <version>2.8.2</version>
+                        <version>3.0.0-M2</version>
                         <executions>
                             <execution>
                                 <id>deploy</id>
