@@ -90,7 +90,6 @@ Add the property `<surefire.opens>` to your properties inside the pom.xml file o
   <properties>
         <surefire.opens>
             --add-opens surveyor/surveyor=ALL-UNNAMED
-            --add-opens javafx.graphics/com.sun.javafx.application.ParametersImpl=ALL-UNNAMED
             --add-exports javafx.graphics/com.sun.javafx.application=ALL-UNNAMED
         </surefire.opens>
    </properties>

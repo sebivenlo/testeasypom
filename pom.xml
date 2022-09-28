@@ -9,6 +9,7 @@
 
         This is a continuation of sebipom.
         Version 4.0.7: update dep and plugin versions.
+        Version 4.0.8: jacaco 0.8.8 for java 17 and 18 support
     </description>
 
     <developers>
@@ -32,7 +33,7 @@
     </licenses>
     <groupId>io.github.sebivenlo</groupId>
     <artifactId>testeasypom</artifactId>
-    <version>4.0.7</version>
+    <version>4.0.8</version>
     <packaging>pom</packaging>
     <name>SEBIVenlo :: TestEasyPom</name>
     <url>https://sebivenlo.github.io/testeasypom/</url>
@@ -59,7 +60,7 @@
         <mockito.core.version>4.3.1</mockito.core.version>
         <junit.jupiter.version>5.8.2</junit.jupiter.version>
         <assertj.core.version>3.22.0</assertj.core.version>
-        <jacoco.version>0.8.7</jacoco.version>
+        <jacoco.version>0.8.8</jacoco.version>
         <!-- empty argline is used by surefire and set by jacoco profile -->
         <jacocoArgLine></jacocoArgLine>
         <argLine></argLine>
@@ -256,6 +257,10 @@
                         <goals>
                             <goal>jar</goal>
                         </goals>
+                        <configuration>
+                            
+                            <additionalJOptions>-source ${java.release}</additionalJOptions>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
@@ -966,7 +971,7 @@
                             <additionalOptions>
                                 --enable-preview --allow-script-in-comments
                             </additionalOptions>
-                            <release>17</release>
+                            <release>${java.release}</release>
                         </configuration>
                     </plugin>
                 </plugins>
