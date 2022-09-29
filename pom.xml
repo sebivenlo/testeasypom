@@ -71,7 +71,7 @@
         <maven.surefire.version>3.0.0-M5</maven.surefire.version>
         <maven.compiler.release>${java.release}</maven.compiler.release>
         <checkstyle.config.location>${user.home}/.m2/sebivenlo_checks.xml</checkstyle.config.location>
-        <javadoc.location>/usr/share/doc/openjdk-11-doc/docs/api/</javadoc.location>
+        <javadoc.location>/usr/share/doc/jdk-11-doc/docs/api/</javadoc.location>
         <pmdVersion>6.42.0</pmdVersion>
         <javafx-maven-plugin-version>0.0.8</javafx-maven-plugin-version>
         <javadoc-highlight>true</javadoc-highlight>
@@ -259,7 +259,7 @@
                         </goals>
                         <configuration>
                             
-                            <additionalJOptions>-source ${java.release}</additionalJOptions>
+                            <additionalJOptions>--enable-preview</additionalJOptions>
                         </configuration>
                     </execution>
                 </executions>
