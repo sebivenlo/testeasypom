@@ -10,6 +10,7 @@
         This is a continuation of sebipom.
         Version 4.0.7: update dep and plugin versions.
         Version 4.0.8: jacaco 0.8.8 for java 17 and 18 support
+        Version 4.0.11: default to java 17
     </description>
 
     <developers>
@@ -33,7 +34,7 @@
     </licenses>
     <groupId>io.github.sebivenlo</groupId>
     <artifactId>testeasypom</artifactId>
-    <version>4.0.8</version>
+    <version>5.1.0</version>
     <packaging>pom</packaging>
     <name>SEBIVenlo :: TestEasyPom</name>
     <url>https://sebivenlo.github.io/testeasypom/</url>
@@ -56,11 +57,11 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.lib.dir>/usr/share/java</java.lib.dir>
-        <java.release>17</java.release>
-        <mockito.core.version>4.3.1</mockito.core.version>
-        <junit.jupiter.version>5.8.2</junit.jupiter.version>
-        <assertj.core.version>3.22.0</assertj.core.version>
-        <jacoco.version>0.8.8</jacoco.version>
+        <java.release>21</java.release>
+        <mockito.core.version>5.5.0</mockito.core.version>
+        <junit.jupiter.version>5.10.0</junit.jupiter.version>
+        <assertj.core.version>3.24.2</assertj.core.version>
+        <jacoco.version>0.8.10</jacoco.version>
         <!-- empty argline is used by surefire and set by jacoco profile -->
         <jacocoArgLine></jacocoArgLine>
         <argLine></argLine>
@@ -70,6 +71,7 @@
         //  assertions.fail, uses CDATA instead of plain xml text, so for the time being stay at 2.22.2 -->
         <maven.surefire.version>3.0.0-M5</maven.surefire.version>
         <maven.compiler.release>${java.release}</maven.compiler.release>
+        <preview></preview>
         <checkstyle.config.location>${user.home}/.m2/sebivenlo_checks.xml</checkstyle.config.location>
         <javadoc.location>/usr/share/doc/jdk-11-doc/docs/api/</javadoc.location>
         <pmdVersion>6.42.0</pmdVersion>
@@ -94,37 +96,37 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-resources-plugin</artifactId>
-                    <version>3.2.0</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-project-info-reports-plugin</artifactId>
-                    <version>3.2.1</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-jar-plugin</artifactId>
-                    <version>3.2.2</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.10.0</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-assembly-plugin</artifactId>
                     <version>3.3.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-project-info-reports-plugin</artifactId>
+                    <version>3.4.2</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>3.3.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.11.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-assembly-plugin</artifactId>
+                    <version>3.5.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>3.3.2</version>
+                    <version>3.5.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>exec-maven-plugin</artifactId>
-                    <version>3.0.0</version>
+                    <version>3.1.0</version>
                 </plugin>                
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -144,7 +146,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-site-plugin</artifactId>
-                    <version>3.10.0</version>
+                    <version>3.12.1</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -159,37 +161,37 @@
                 <plugin>
                     <groupId>org.pitest</groupId>
                     <artifactId>pitest-maven</artifactId>
-                    <version>1.7.4</version>
+                    <version>1.14.4</version>
                     <dependencies>
                         <dependency>
                             <groupId>org.pitest</groupId>
                             <artifactId>pitest-junit5-plugin</artifactId>
-                            <version>0.15</version>
+                            <version>1.0.0</version>
                         </dependency>
                     </dependencies>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-checkstyle-plugin</artifactId>
-                    <version>3.1.2</version>
+                    <version>3.2.0</version>
                     <dependencies>
                         <dependency>
                             <groupId>com.puppycrawl.tools</groupId>
                             <artifactId>checkstyle</artifactId>
-                            <version>9.3</version>
+                            <version>10.8.0</version>
                         </dependency>
                     </dependencies>
                 </plugin>
                 <plugin>
                     <groupId>com.github.spotbugs</groupId>
                     <artifactId>spotbugs-maven-plugin</artifactId>
-                    <version>4.5.3.0</version>
+                    <version>4.7.3.2</version>
                     <dependencies>
                         <!-- overwrite dependency on spotbugs if you want to specify the version of spotbugs -->
                         <dependency>
                             <groupId>com.github.spotbugs</groupId>
                             <artifactId>spotbugs</artifactId>
-                            <version>4.5.3</version>
+                            <version>4.7.3</version>
                         </dependency>
                     </dependencies>
                 </plugin>
@@ -201,7 +203,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-pmd-plugin</artifactId>
-                    <version>3.15.0</version>
+                    <version>3.20.0</version>
                     <dependencies>
                         <dependency>
                             <groupId>net.sourceforge.pmd</groupId>
@@ -228,7 +230,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jxr-plugin</artifactId>
-                    <version>3.1.1</version>
+                    <version>3.3.0</version>
                 </plugin>
             </plugins>
 
@@ -250,17 +252,13 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.3.2</version>
+                <version>3.5.0</version>
                 <executions>
                     <execution>
                         <id>attach-javadocs</id>
                         <goals>
                             <goal>jar</goal>
                         </goals>
-                        <configuration>
-                            
-                            <additionalJOptions>--enable-preview</additionalJOptions>
-                        </configuration>
                     </execution>
                 </executions>
             </plugin>
@@ -286,18 +284,16 @@
                     </archive>
                 </configuration>
             </plugin>
-            <plugin>
+            <plugin><!-- set java release and enable optionally enable review -->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
                     <release>${java.release}</release>
                     <source>${java.release}</source>
                     <target>${java.release}</target>
-                    <!--                    <compilerArgs>
-                        <arg>-Xpkginfo:always</arg>
-                        <arg>-verbose</arg>
-                    </compilerArgs>-->
-
+                    <compilerArgs>
+                        <arg>${preview}</arg>
+                    </compilerArgs>
                 </configuration>
             </plugin>
             <plugin>
@@ -365,7 +361,7 @@
             <extension>
                 <groupId>org.apache.maven.wagon</groupId>
                 <artifactId>wagon-ssh-external</artifactId>
-                <version>3.5.1</version>
+                <version>3.5.3</version>
             </extension>
         </extensions>
 
@@ -380,7 +376,7 @@
             <dependency>
                 <groupId>org.mockito</groupId>
                 <artifactId>mockito-core</artifactId>
-                <version>${mockito.core.version}</version>
+                <version>5.2.0</version>
             </dependency>
             <dependency>
                 <groupId>org.junit.jupiter</groupId>
@@ -427,7 +423,7 @@
             </plugin>
             <plugin>
                 <artifactId>maven-jxr-plugin</artifactId>
-                <version>3.1.1</version>
+                <version>3.3.0</version>
                 <reportSets>
                     <reportSet>
                         <reports>
@@ -648,7 +644,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>3.3.2</version>
+                        <!--<version>3.4.1</version>-->
                         <configuration>
                             <detectJavaApiLink>false</detectJavaApiLink>
                             <show>private</show>
@@ -685,9 +681,12 @@
                                     <version>1.1.1</version>
                                 </additionalDependency>
                             </additionalDependencies>
-                            <additionalParam>-Xdoclint:none</additionalParam>
-                            <additionalParam>-html5</additionalParam>
-                            <additionalOptions>--allow-script-in-comments</additionalOptions>
+                            
+                            <additionalOptions>
+                                -Xdoclint:none
+                                -html5
+                                --allow-script-in-comments
+                            </additionalOptions>
                             <release>${java.release}</release>
                             <source>${java.release}</source>
                             <show>private</show>
@@ -704,7 +703,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>3.3.2</version>
+                        <!--<version>3.4.1</version>-->
                         <executions>
                             <execution>
                                 <id>attach-javadocs</id>
@@ -823,6 +822,7 @@
                             <excludedMethods>
                                 <excludedMethod>*hashCode</excludedMethod>
                             </excludedMethods>
+                            <argLine>-Dnet.bytebuddy.experimental=true -XX:+EnableDynamicAgentLoading</argLine>
                         </configuration>
                     </plugin>
                 </plugins>
@@ -954,19 +954,24 @@
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>exec-maven-plugin</artifactId>
-                        <!--<version>3.0.0</version>-->
-                        <configuration>
-                            <executable>java</executable>
-                            <arguments>
-                                <argument>--enable-preview</argument>
-                                <argument>${exec.mainClass}</argument>
-                            </arguments>
-                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>java</id>
+                                <configuration>
+                                    <executable>java</executable>
+                                    <arguments>
+                                        <argument>--enable-preview</argument>
+                                        <argument>${exec.mainClass}</argument>
+                                    </arguments>
+                                    
+                                </configuration>
+                            </execution>
+                        </executions>
                     </plugin>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
-                        <!--<version>3.3.1</version>-->
+                        <!--<version>3.4.1</version>-->
                         <configuration>
                             <additionalOptions>
                                 --enable-preview --allow-script-in-comments
@@ -992,9 +997,11 @@
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
                         <configuration>
-                            <additionalParam>-Xdoclint:none</additionalParam>
-                            <additionalParam>-html5</additionalParam>
-                            <additionalJOptions>--allow-script-in-comments</additionalJOptions>
+                            <additionalOptions>
+                                --allow-script-in-comments
+                                -Xdoclint:none
+                                -html5
+                            </additionalOptions>
                             <release>${java.release}</release>
                             <source>${java.release}</source>
                             <detectJavaApiLink>false</detectJavaApiLink>

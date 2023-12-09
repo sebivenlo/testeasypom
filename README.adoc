@@ -19,7 +19,7 @@ You can use the configuration by defining testeasypom as the parent by simply ad
   <parent>
       <groupId>io.github.sebivenlo</groupId>
       <artifactId>testeasypom</artifactId>
-      <version>4.0.7</version>
+      <version>4.0.11</version>
       <relativePath/>
   </parent>
 ----
@@ -51,7 +51,7 @@ where `property-name` is the name, and the `value` is the value.
 |mockito.core.version|4.3.1|
 |junit.jupiter.version|5.8.2|
 |assertj.core.version|3.22.0|
-|jacoco.version|0.8.7|
+|jacoco.version|0.8.78
 |jacocoArgLine| |defined to be able to configure jacoco
 |argLine|| to be able to pass extra arguments
 |surefire.opens|| to be able to pass opens statement to the jvm during test runs
@@ -70,7 +70,7 @@ testeasypom has been derived from sebipom, with the same purpose for fontys venl
 **TL;DR:** Don't do `mvn package` or build (in your IDE) , do `mvn test` instead.
 
 For those that are into test driven something:
-Make it a habit to do `mvn test` instead of `mvn package`. `mvn package` typically does much more work than really required to get your tests do thier work. Enjoy the better maven experience this way. With testeasypom , just typing *mvn*  defaults to mvn test.
+Make it a habit to do  `mvn test` instead of `mvn package`. `mvn package` typically does much more work than really required to get your tests do thier work. Enjoy the better maven experience this way. With testeasypom , just typing *mvn*  defaults to mvn test.
 
 === Run an JavaFX application with this parent pom
 
