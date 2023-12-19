@@ -11,6 +11,7 @@
         Version 4.0.7: update dep and plugin versions.
         Version 4.0.8: jacaco 0.8.8 for java 17 and 18 support
         Version 4.0.11: default to java 17
+        Version 5.1.0: default to java 21
     </description>
 
     <developers>
@@ -58,10 +59,10 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.lib.dir>/usr/share/java</java.lib.dir>
         <java.release>21</java.release>
-        <mockito.core.version>5.5.0</mockito.core.version>
-        <junit.jupiter.version>5.10.0</junit.jupiter.version>
+        <mockito.core.version>5.7.0</mockito.core.version>
+        <junit.jupiter.version>5.10.1</junit.jupiter.version>
         <assertj.core.version>3.24.2</assertj.core.version>
-        <jacoco.version>0.8.10</jacoco.version>
+        <jacoco.version>0.8.11</jacoco.version>
         <!-- empty argline is used by surefire and set by jacoco profile -->
         <jacocoArgLine></jacocoArgLine>
         <argLine></argLine>
@@ -69,7 +70,7 @@
         <surefire.opens></surefire.opens>
         <!-- surefire 3.0.0-Mx uses incompatible message handling for
         //  assertions.fail, uses CDATA instead of plain xml text, so for the time being stay at 2.22.2 -->
-        <maven.surefire.version>3.0.0-M5</maven.surefire.version>
+        <maven.surefire.version>3.2.2</maven.surefire.version>
         <maven.compiler.release>${java.release}</maven.compiler.release>
         <preview></preview>
         <checkstyle.config.location>${user.home}/.m2/sebivenlo_checks.xml</checkstyle.config.location>
@@ -116,17 +117,17 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-assembly-plugin</artifactId>
-                    <version>3.5.0</version>
+                    <version>3.6.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>3.5.0</version>
+                    <version>3.6.2</version>
                 </plugin>
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>exec-maven-plugin</artifactId>
-                    <version>3.1.0</version>
+                    <version>3.1.1</version>
                 </plugin>                
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -203,7 +204,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-pmd-plugin</artifactId>
-                    <version>3.20.0</version>
+                    <version>3.21.2</version>
                     <dependencies>
                         <dependency>
                             <groupId>net.sourceforge.pmd</groupId>
