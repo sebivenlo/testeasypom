@@ -12,6 +12,7 @@
         Version 4.0.8: jacaco 0.8.8 for java 17 and 18 support
         Version 4.0.11: default to java 17
         Version 5.1.0: default to java 21
+        Version 5.2.0: include testfx stuff in fx profile
     </description>
 
     <developers>
@@ -35,7 +36,7 @@
     </licenses>
     <groupId>io.github.sebivenlo</groupId>
     <artifactId>testeasypom</artifactId>
-    <version>5.1.0</version>
+    <version>5.2.0</version>
     <packaging>pom</packaging>
     <name>SEBIVenlo :: TestEasyPom</name>
     <url>https://sebivenlo.github.io/testeasypom/</url>
@@ -587,6 +588,32 @@
         </profile><!-- jacoco -->
         <profile>
             <id>fx</id>
+            <dependencies>
+                <dependency>
+                    <groupId>org.testfx</groupId>
+                    <artifactId>testfx-junit5</artifactId>
+                    <version>4.0.17</version>
+                    <scope>test</scope>
+                </dependency>
+                <dependency>
+                    <groupId>org.testfx</groupId>
+                    <artifactId>testfx-junit</artifactId>
+                    <version>4.0.17</version>
+                    <scope>test</scope>
+                </dependency>
+                <dependency>
+                    <groupId>org.testfx</groupId>
+                    <artifactId>testfx-core</artifactId>
+                    <version>4.0.17</version>
+                    <scope>test</scope>
+                </dependency>
+                <dependency>
+                    <groupId>io.github.sebivenlo</groupId>
+                    <artifactId>openjfx-monocle</artifactId>
+                    <version>jdk-21.0.1</version>
+                    <scope>test</scope>
+                </dependency>
+            </dependencies>
             <build>
                 <plugins>
                     <plugin>
